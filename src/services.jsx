@@ -3,7 +3,7 @@ import img1 from './assets/img.jpg'
 import img2 from '../down2.jpg'
 import img3 from '../download.jpg'
 import Addchart from './chart'
-
+import { useNavigate } from 'react-router-dom'
 import { FaSpinner } from 'react-icons/fa';
 import img5 from './assets/img2.jpg'
 import img6 from './assets/pic.jpg'
@@ -17,6 +17,8 @@ import Usercontext from './context'
 import Detail from './detail'
 function Services() {
   const [data,setdata]=React.useState(null)
+    const navigate = useNavigate();
+  
   const {setuser}=useContext(Usercontext)
   // const [mydata,setmydata]= useState([]);
  const [pro,setpro]=useState('')
@@ -36,7 +38,7 @@ function Services() {
     setItems(data)
   }).catch((err) => console.error('Error fetching:', err));
  }else{
-  window.location.href=("http://localhost:5173/sign")
+  navigate('/sign')
  }
 
  

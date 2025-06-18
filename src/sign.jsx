@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import './App.css'
 function Sign() {
-
+   const navigate = useNavigate();
+ 
   const [errors, setErrors] = useState({})
   const [success, setSuccess] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -36,10 +37,11 @@ function Sign() {
 
       if (response.status === 201 || data.message === "User created successfully") {
         alert("Registration successful!");
-        window.location.href = "http://localhost:5173/login";
+       navigate("/login");
       } else {
         alert(data.message || "Something went wrong");
-        window.location.href = "http://localhost:5173/login";
+       navigate("/login");
+       
       }
 
     } catch (error) {

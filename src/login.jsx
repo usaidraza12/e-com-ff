@@ -9,6 +9,8 @@ import {
 } from '@mui/material';
 
 function Login() {
+   const navigate = useNavigate();
+  
   const [fetchdata,setfetchdata]=useState([])
   console.log(fetchdata)
   const [formData, setFormData] = useState({
@@ -41,7 +43,7 @@ function Login() {
         localStorage.setItem('token',data.token)
         localStorage.setItem('userId',data.user._id)
         
-        window.location.href=("http://localhost:5173/services")
+      navigate("/services")
       })
 
       
