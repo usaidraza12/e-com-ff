@@ -28,7 +28,7 @@ function Services() {
  const token=localStorage.getItem('token')
 
  if(token){
-  const fetching=fetch('http://localhost:8001/services',{
+  const fetching=fetch('https://render-iw08.onrender.com/services',{
     method: 'GET',
     headers: {
       Authorization: `Bearer ${token}`

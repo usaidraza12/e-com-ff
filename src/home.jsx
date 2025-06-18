@@ -41,7 +41,7 @@ function Home() {
                     <p>Discover the latest in shoes fashion for every occasion.</p>
                 <Link to="/services">
                 <button className="shop-now-btn" onClick={()=>{
-                            window.location.href="http://localhost:5173/services"
+                            window.location.href="https://render-iw08.onrender.com/services"
                         }}>Shop Now</button>
                 </Link>
                 </div>
@@ -58,7 +58,7 @@ function Home() {
                         <h3>shoes</h3>
                         <p>$80</p>
                         <button className="buy-now-btn"onClick={()=>{
-                            window.location.href="http://localhost:5173/services"
+                            window.location.href="https://render-iw08.onrender.com3/services"
                         }}>Buy Now</button>
                     </div>
 </div>
