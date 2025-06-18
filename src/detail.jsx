@@ -17,42 +17,11 @@ const userid= localStorage.getItem("userId")
 
   const handleAddToCart = async (e) => {
     e.preventDefault()
-    if (!selectedSize) {
-      alert('Please select a size');
-      return;
-    }
-
-    try {
       // Save to MongoDB via API
-      const response = await fetch('http://localhost:8001/api/cart/add', {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(para),
-      }).then((res)=>res.json())
-      .then((data)=>console.log(data))
-      .catch((err)=>{console.log(err)})
+    
+    };
 
-      // if (!response.ok) throw new Error('Failed to add to cart');
-
-      // Update local context
-      // setpara({
-      //   name: user.name,
-      //   id: user.id,
-      //   image: user.image,
-      //   price: user.price,
-      //   quantity: quantity,
-      //   size: selectedSize
-      // });
-
-      // // Navigate to cart page
-      // navigate('/cart');
-    } catch (error) {
-      console.error('Error adding to cart:', error);
-      alert('Failed to add item to cart');
-    }
-  };
+ 
 
   return (
     <div className="detail-container">
@@ -114,6 +83,7 @@ const userid= localStorage.getItem("userId")
               className="btn add-to-cart"
               onClick={ async(e)=>{
                 e.preventDefault()
+                 try {
                 setpara({
                   name:user.name,
                   image:user.image,
@@ -126,12 +96,11 @@ const userid= localStorage.getItem("userId")
                 console.log(para)
                  if (!selectedSize) {
       alert('Please select a size');
-      return;
-    }
-
-    try {
+                 }
+                        
       // Save to MongoDB via API
-      const response = await fetch('http://localhost:8001/api/cart/add', {
+    else if(selectedSize){
+        const response = await fetch('http://localhost:8001/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -140,38 +109,25 @@ const userid= localStorage.getItem("userId")
       }).then((res)=>res.json())
       .then((data)=>{
         console.log(data)
-        navigate("/cart")
       })
-      .catch((err)=>{console.log(err)})
-
-      // if (!response.ok) throw new Error('Failed to add to cart');
-
-      // Update local context
-      // setpara({
-      //   name: user.name,
-      //   id: user.id,
-      //   image: user.image,
-      //   price: user.price,
-      //   quantity: quantity,
-      //   size: selectedSize
-      // });
-
-      // // Navigate to cart page
-      // navigate('/cart');
-      // navigate('/cart');
+      navigate("/cart")
+    }
 
     } catch (error) {
       console.error('Error adding to cart:', error);
       alert('Failed to add item to cart');
     }
+                
+
+ 
               }}
             >
               <FaShoppingCart /> Add to Cart
             </button>
             
-            <button className="btn buy-now">
+            {/* <button className="btn buy-now">
               Buy Now
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
