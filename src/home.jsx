@@ -10,7 +10,7 @@ import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { FaStumbleuponCircle } from 'react-icons/fa';
-
+import "./App.css"
 function Home() {
     useEffect(() => {
         AOS.init({
