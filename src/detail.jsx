@@ -102,7 +102,7 @@ const userid= localStorage.getItem("userId")
                         
       // Save to MongoDB via API
     else if(selectedSize){
-        const response = await fetch('http://localhost:8001/api/cart/add', {
+        const response = await fetch('https://render-3-4kao.onrender.com/api/cart/add', {
         method: 'POST',
         headers: {
         Authorization: `Bearer ${token}`,

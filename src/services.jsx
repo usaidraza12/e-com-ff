@@ -28,7 +28,7 @@
 //  const token=localStorage.getItem('token')
 
 //  if(token){
-//   const fetching=fetch('http://localhost:8001/services',{
+//   const fetching=fetch('https://render-3-4kao.onrender.com/services',{
 //     method: 'GET',
 //     headers: {
 //       Authorization: `Bearer ${token}`
@@ -50,7 +50,7 @@
  
 
 // //  useEffect(()=>{
-// //   const fetching=fetch('http://localhost:8001/services',{
+// //   const fetching=fetch('https://render-3-4kao.onrender.com/services',{
 // //     method: 'GET',
    
 // //   })
@@ -66,7 +66,7 @@
       
 // //  },[]);
 
-// // //  const usercheck= fetch('http://localhost:8001/auth')
+// // //  const usercheck= fetch('https://render-3-4kao.onrender.com/auth')
 // // //  .then((res)=>res.json())
 // // //  .then((data)=>{
 // // //   if(data.massege=true){
@@ -177,7 +177,7 @@
 //       return;
 //     }
 
-//     fetch('http://localhost:8001/services', {
+//     fetch('https://render-3-4kao.onrender.com/services', {
 //       method: 'GET',
 //       headers: {
 //         Authorization: `Bearer ${token}`,
@@ -276,7 +276,7 @@ function Services() {
       return;
     }
 
-    fetch('http://localhost:8001/services', {
+    fetch('https://render-3-4kao.onrender.com/services', {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

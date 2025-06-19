@@ -14,7 +14,7 @@ function ChartList() {
 
     if (userId) {
       axios
-        .get(`http://localhost:8001/api/cart/all`, {
+        .get(`https://render-3-4kao.onrender.com/api/cart/all`, {
           params: { userId: userId },
           headers:{
         Authorization: `Bearer ${token}`,
@@ -37,7 +37,7 @@ function ChartList() {
 
   const handleDelete = async (id) => {
   try {
-    const res = await fetch(`http://localhost:8001/api/cart/${id}`, {
+    const res = await fetch(`https://render-3-4kao.onrender.com/api/cart/${id}`, {
       method: 'DELETE',
     });
 

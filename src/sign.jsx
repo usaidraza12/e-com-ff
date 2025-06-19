@@ -26,7 +26,7 @@
 //   const handleSubmit = async (e) => {
 //     e.preventDefault();
 //     try {
-//       const response = await fetch('http://localhost:8001/detail', {
+//       const response = await fetch('https://render-3-4kao.onrender.com/detail', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         mode: 'cors',
@@ -126,7 +126,7 @@
 //     setError('');
 
 //     try {
-//       const response = await fetch('http://localhost:8001/detail', {
+//       const response = await fetch('https://render-3-4kao.onrender.com/detail', {
 //         method: 'POST',
 //         headers: { 'Content-Type': 'application/json' },
 //         mode: 'cors',
@@ -250,7 +250,7 @@ function Sign() {
     setError("")
 
     try {
-      const response = await fetch("http://localhost:8001/detail", {
+      const response = await fetch("https://render-3-4kao.onrender.com/detail", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "cors",
