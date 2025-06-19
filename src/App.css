@@ -18,6 +18,33 @@ font-family:'Courier New', Courier, monospace;
   
   
 }
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+#lo{
+  color: #0077b5;
+}
 .sepe{
   width: 100%;
   height: max-content;
@@ -1064,7 +1091,8 @@ top: 100px;
     font-size: 1.3rem;
   }
   #box{
-    margin-top: 10px;
+  padding: 5px;
+
   }
   body{
     margin: 0px;
@@ -1096,6 +1124,7 @@ top: 100px;
   .nav-links.show {
     display: flex; /* Show when toggled */
     width: 30%;
+   
   }
 
   .menu-icon {
@@ -2383,7 +2412,7 @@ detail-container{
 #fa{
   width: 90%;
   margin: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footerO {
@@ -2398,6 +2427,16 @@ detail-container{
   }
   .ctaO-form{
     width: 80%;
+  }
+  .nav-links.show {
+    display: flex; /* Show when toggled */
+    width: 30%;
+   
+   
+  }
+  #box{
+    gap: 10px;
+    margin: 7px;
   }
 
 }
@@ -2518,7 +2557,7 @@ detail-container{
 #fa{
   width: 90%;
   margin: 10px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .footerO {

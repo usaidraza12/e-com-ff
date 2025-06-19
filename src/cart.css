@@ -2,6 +2,10 @@
   padding: 20px;
   max-width: 1200px;
   margin: auto;
+  margin-top: 50px;
+  width: 100%;
+  align-items: center;
+
 }
 
 .page-title {
@@ -32,7 +36,7 @@
 .cart-item {
   background-color: #f8f8f8;
   border: 1px solid #ddd;
-  padding: 15px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s;
@@ -75,4 +79,12 @@
   .cart-item {
     padding: 12px;
   }
+  .chartlist-container {
+  padding: 10px;
+  margin: auto;
+  margin-top: 10px;
+  width: 100%;
+  align-items: center;
+
+}
 }

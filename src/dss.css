@@ -3,13 +3,16 @@
   max-width: 1200px;
   margin: 3rem auto 2rem; /* more space from navbar */
   padding: 0 1rem;
+  margin-top: 100px;
 }
 
 .detail-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+  
   background: white;
+  margin: 10px;
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
@@ -17,7 +20,7 @@
 
 /* Image Styling */
 .detail-image-box {
-  flex: 1 1 300px;
+  /* flex: 1 1 300px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -218,9 +221,16 @@
 
 /* Responsive Styles */
 @media (max-width: 992px) {
+  .detail-container {
+width: 100%;
+padding-top: 40px;
+
+}
+
   .detail-wrapper {
     padding: 1.5rem;
     gap: 1.5rem;
+    
   }
 
   .detail-title {
@@ -247,6 +257,7 @@
 
   .detail-image {
     max-width: 250px;
+    
   }
 
   .detail-title {

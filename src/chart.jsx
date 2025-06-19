@@ -7,14 +7,19 @@ function ChartList() {
   const [cartItems, setCartItems] = useState([]);
   console.log(cartItems)
   const [loading, setLoading] = useState(true);
+    const token = localStorage.getItem('token');
 
   useEffect(() => {
     const userId = localStorage.getItem('userId');
 
     if (userId) {
       axios
-        .get(`https://render-iw08.onrender.com/api/cart/all`, {
-          params: { userId: userId }
+        .get(`http://localhost:8001/api/cart/all`, {
+          params: { userId: userId },
+          headers:{
+        Authorization: `Bearer ${token}`,
+
+          },
         })
         .then((response) => {
           setCartItems(response.data);
@@ -32,7 +37,7 @@ function ChartList() {
 
   const handleDelete = async (id) => {
   try {
-    const res = await fetch(`https://render-iw08.onrender.com/api/cart/${id}`, {
+    const res = await fetch(`http://localhost:8001/api/cart/${id}`, {
       method: 'DELETE',
     });
 

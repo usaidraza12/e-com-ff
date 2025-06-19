@@ -26,7 +26,6 @@ const Navbar = () => {
     };
 
       const {cartItems}=useContext(Usercontext)
-      console.log(cartItems)
     
 const [user,setuser]=React.useState([])
 const [para,setpara]=React.useState([])
