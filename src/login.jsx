@@ -1,92 +1,4 @@
-// import React, { useState} from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import {
-//   Box,
-//   TextField,
-//   Button,
-//   Paper,
-//   Typography,
-//   Container
-// } from '@mui/material';
 
-// function Login() {
-//    const navigate = useNavigate();
-  
-//   const [fetchdata,setfetchdata]=useState([])
-//   console.log(fetchdata)
-//   const [formData, setFormData] = useState({
-//     email: '',
-//     password: '',
-//   });
-
-//   const [responseMessage, setResponseMessage] = useState('');
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setFormData((prev) => ({
-//       ...prev,
-//       [name]: value,
-//     }));
-//     console.log(formData)
-//   };
-
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//     try {
-//       const response = await fetch('https://render-3-4kao.onrender.com/login', {
-//         method: 'POST',
-//         mode:"cors",
-//         headers: { 'Content-Type': 'application/json' },
-//         mode: 'cors',
-//         body: JSON.stringify(formData),
-//       }).then((res)=>res.json())
-//       .then((data)=>{
-        
-//         localStorage.setItem('token',data.token)
-//         localStorage.setItem('userId',data.user._id)
-        
-//       navigate("/services")
-//       })
-
-      
-      
-     
-//     } catch (error) {
-//       console.error('Error sending data:', error);
-     
-//     }
-//   };
-
-//   return (
-//     <div className="signup">
-
-//     <div className="my-input">
-//       <form onSubmit={handleSubmit} > 
-//   <h2 id='h2'>login</h2>
-//         <input
-//                   id="name"
-//                   name="email"
-//                   type="email"
-//                   placeholder='enter your email'
-//                   value={formData.email}
-//                   onChange={handleChange}/>
-
-//                    <input
-//                   id="name"
-//                   name="password"
-//                   placeholder='enter your password'
-//                   type="text"
-//                   value={formData.password}
-//                   onChange={handleChange}/>
-                 
-//                    <button type='submit' id='btt'> submit</button>
-//       </form>
-//     </div>
-//   </div>
-//   );
-// }
-
-// export default Login;
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -105,10 +17,10 @@ function Login() {
   useEffect(() => {
     // If already logged in, redirect to /services
     const token = localStorage.getItem('token');
-    if (token) {
+    if (!token === null) {
       navigate('/services');
     }
-  }, [navigate]);
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -121,9 +33,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
-
+// const res = await fetch(`${import.meta.env.VITE_API_URL}/login`
     try {
-      const res = await fetch('https://render-3-4kao.onrender.com/login', {
+      const res = await fetch('http://localhost:8001/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors',
@@ -131,11 +43,12 @@ function Login() {
       });
 
       const data = await res.json();
+      console.log(data)
 
       if (res.status === 200 && data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userId', data.user._id);
-        navigate('/services');
+        navigate('/services')
       } else {
         setError(data.message || 'Invalid credentials');
       }

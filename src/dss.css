@@ -251,6 +251,9 @@ padding-top: 40px;
 }
 
 @media (max-width: 480px) {
+  .cart-list{
+    margin-top: 100px;
+  }
   .detail-container {
     margin-top: 2rem;
   }
