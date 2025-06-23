@@ -41,18 +41,19 @@ const apiUrl = import.meta.env.VITE_URL;
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors',
         body: JSON.stringify(formData),
-      });
+      }) .then((res)=>res.json())
+      .then((data)=>{
+        if(data.message === "invalid info"){
+        setError(data.message);
 
-      const data = await res.json();
-      console.log(data)
-
-      if (res.status === 200 && data.token) {
+        }else if(data.status === 200 && data.token) {
         localStorage.setItem('token', data.token);
         localStorage.setItem('userId', data.user._id);
         navigate('/services')
-      } else {
-        setError(data.message || 'Invalid credentials');
       }
+        
+      })
+
     } catch (error) {
       console.error('Login error:', error);
       setError('Something went wrong. Please try again later.');

@@ -24,6 +24,7 @@ import Usercontext from './context'
 import Login from './login';
 import Sign from './sign';
 import CartPage from './chart';
+import Cart from './chart';
 // import Module from '../tailwind.config'
 
 function App() {
@@ -63,7 +64,7 @@ function App() {
       element:<Sign/>,
         },{
           path:"/cart",
-      element:<CartPage/>,
+      element:<Cart/>,
         }
       ]
 
