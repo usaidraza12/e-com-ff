@@ -109,6 +109,9 @@ function Cart() {
   const [loading, setLoading] = useState(true);
   const userId = localStorage.getItem('userId');
   const token = localStorage.getItem('token');
+const apiUrl = import.meta.env.VITE_URL;
+console.log("Backend URL:", apiUrl);
+
 
   useEffect(() => {
     if (!userId || !token) {
@@ -118,14 +121,14 @@ function Cart() {
     }
 
     axios
-      .get('http://localhost:8001/api/cart/all', {
+      .get(`${apiUrl}/api/cart/all`, {
         params: { userId },
         headers: {
           Authorization: `Bearer ${token}`,
         },
       })
       .then((res) => {
-        console.log('Cart response:', res.data);
+        // console.log('Cart response:', res.data);
         const items = res.data.cartItems;
 
         if (Array.isArray(items)) {
@@ -145,7 +148,7 @@ function Cart() {
 
   const handleDelete = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8001/api/cart/${id}`, {
+      const res = await fetch(`${apiUrl}/api/cart/${id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

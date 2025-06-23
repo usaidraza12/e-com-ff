@@ -226,41 +226,7 @@ import Usercontext from './context';
 import './App.css';
 
 function Services() {
-//   const [items, setItems] = useState([]);
-//   const [loading, setLoading] = useState(false); // for spinner
-//   const { setuser } = useContext(Usercontext);
-//   const navigate = useNavigate();
-
-//     const token = localStorage.getItem('token');
-
-//     if (token === null  || !token) {
-
-//       navigate('/sign');
-//     }else if(token) {
-//       setLoading(true)
-//   fetch(`http://localhost:8001/services`, {
-//       method: 'GET',
-//       headers: {
-//         Authorization: `Bearer ${token}`,
-//       },
-//     })
-//       .then((res) => res.json())
-//       .then((data) => {
-//         if (data.status === 401) {
-//           navigate('/sign');
-//         } else {
-//           setItems(data); // Adjust if backend sends { items: [...] }
-//         }
-//         setLoading(false);
-//       })
-//       .catch((err) => {
-//         console.error('Error fetching:', err);
-//         navigate('/sign');
-//         setLoading(false);
-//       });
-
-// }
-  
+const apiUrl = import.meta.env.VITE_URL;
 
 
  const [items, setItems] = useState([]);
@@ -279,7 +245,7 @@ function Services() {
 
     setLoading(true);
 
-    fetch(`http://localhost:8001/services`, {
+    fetch(`${apiUrl}/services`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

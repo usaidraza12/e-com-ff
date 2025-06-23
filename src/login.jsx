@@ -29,13 +29,14 @@ function Login() {
       [name]: value,
     }));
   };
+const apiUrl = import.meta.env.VITE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 // const res = await fetch(`${import.meta.env.VITE_API_URL}/login`
     try {
-      const res = await fetch('http://localhost:8001/login', {
+      const res = await fetch(`${apiUrl}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         mode: 'cors',

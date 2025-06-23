@@ -31,6 +31,7 @@ function Sign() {
       [name]: value,
     }))
   }
+const apiUrl = import.meta.env.VITE_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -38,7 +39,7 @@ function Sign() {
     setError("")
 
     try {
-      const response = await fetch('http://localhost:8001/detail', {
+      const response = await fetch(`${apiUrl}/detail`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         mode: "cors",

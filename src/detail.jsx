@@ -167,6 +167,7 @@ import { FaShoppingCart, FaStar, FaRegStar, FaSpinner } from 'react-icons/fa';
 function Detail() {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
+const apiUrl = import.meta.env.VITE_URL;
 
   const [quantity, setQuantity] = useState(1);
   const [selectedSize, setSelectedSize] = useState('');
@@ -199,7 +200,7 @@ function Detail() {
     try {
       setLoading(true);
 
-      const res = await fetch('http://localhost:8001/api/cart/add', {
+      const res = await fetch(`${apiUrl}/api/cart/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
