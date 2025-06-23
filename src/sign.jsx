@@ -48,17 +48,16 @@ const apiUrl = import.meta.env.VITE_URL;
 
       const data = await response.json()
 
-      if (data.message === "User created successfully") {
-        alert("Registration successful!")
+      if (data.message === "This email is already registered" ) {
+        alert("This email is already registered")
+        setError(data.message)
         navigate("/login")
       } else {
-        setError(data.message || "Something went wrong")
+        navigate("/login")
       }
     } catch (error) {
       console.error("Error sending data:", error)
       setError("Network error. Please try again later.")
-    } finally {
-      setLoading(false)
     }
   }
 

@@ -210,8 +210,9 @@ const apiUrl = import.meta.env.VITE_URL;
       });
 
       const data = await res.json();
+      console.log(data)
 
-      if (data.message === 'add' || data.message === 'okk') {
+      if (data.message === 'add' || data.message === 'New item added to cart') {
         navigate('/cart');
       } else {
         alert('Item could not be added');

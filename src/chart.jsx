@@ -108,6 +108,7 @@ function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const userId = localStorage.getItem('userId');
+  
   const token = localStorage.getItem('token');
 const apiUrl = import.meta.env.VITE_URL;
 console.log("Backend URL:", apiUrl);
