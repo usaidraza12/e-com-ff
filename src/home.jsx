@@ -9,9 +9,13 @@ import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useNavigate } from "react-router-dom"
+
 import { FaStumbleuponCircle } from 'react-icons/fa';
 import "./App.css"
 function Home() {
+      const navigate = useNavigate()
+    
     useEffect(() => {
         AOS.init({
           duration: 1000, // Animation duration in milliseconds
@@ -41,7 +45,7 @@ function Home() {
                     <p>Discover the latest in shoes fashion for every occasion.</p>
                 <Link to="/services">
                 <button className="shop-now-btn" onClick={()=>{
-                            window.location.href="https://render-iw08.onrender.com/services"
+                           navigate("/services")
                         }}>Shop Now</button>
                 </Link>
                 </div>
@@ -58,7 +62,7 @@ function Home() {
                         <h3>shoes</h3>
                         <p>$80</p>
                         <button className="buy-now-btn"onClick={()=>{
-                            window.location.href="https://render-iw08.onrender.com3/services"
+                           navigator("/services")
                         }}>Buy Now</button>
                     </div>
 </div>
