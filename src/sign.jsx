@@ -1,5 +1,5 @@
-
-
+import { Link } from 'react-router-dom';
+import React from 'react';
 import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./Sign.css"
@@ -126,9 +126,9 @@ const apiUrl = import.meta.env.VITE_URL;
         <div className="signup-footer">
           <p>
             Already have an account?{" "}
-            <a href="/login" className="login-link">
+            <Link to="/login" className="login-link">
               login
-            </a>
+            </Link>
           </p>
         </div>
       </div>

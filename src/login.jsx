@@ -1,7 +1,8 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaSpinner } from "react-icons/fa"
 
 function Login() {
   const navigate = useNavigate();
@@ -32,6 +33,7 @@ function Login() {
 const apiUrl = import.meta.env.VITE_URL;
 
   const handleSubmit = async (e) => {
+    setLoading(true)
     e.preventDefault();
     setError('');
 // const res = await fetch(`${import.meta.env.VITE_API_URL}/login`
@@ -100,7 +102,15 @@ const apiUrl = import.meta.env.VITE_URL;
     
               {error && <div className="error-alert">{error}</div>}
     
-              <button type="submit" className="submit-button" disabled={loading}>
+              <button type="submit" className="submit-button">
+                 {loading ? (
+                              <>
+                                <FaSpinner className="loading-spinner" />
+                                Creating account...
+                              </>
+                            ) : (
+                              "Create Account"
+                            )}
               submit
               </button>
             </form>
@@ -108,9 +118,9 @@ const apiUrl = import.meta.env.VITE_URL;
             <div className="signup-footer">
               <p>
                 don't have an account?{" "}
-                <a href="/sign" className="login-link">
+                <Link to="/sign" className="login-link">
                   sign
-                </a>
+                </Link>
               </p>
             </div>
           </div>
