@@ -1091,10 +1091,7 @@ top: 100px;
   .daraz-price {
     font-size: 1.3rem;
   }
-  #box{
-  padding: 5px;
-
-  }
+ 
   body{
     margin: 0px;
     padding: 0px;
@@ -1415,7 +1412,8 @@ top: 100px;
   
 }
 #box{
-  padding: 15px;
+  height: 40px;
+  gap: 20px;
 }
 }
 @media (max-width: 668px) {
@@ -2436,10 +2434,9 @@ detail-container{
     display: flex; /* Show when toggled */
     width: 30%;
    
-   
   }
   #box{
-    gap: 10px;
+    gap: 20px;
     margin: 7px;
   }
 
