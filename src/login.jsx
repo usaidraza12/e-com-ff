@@ -46,7 +46,9 @@ const apiUrl = import.meta.env.VITE_URL;
         if(data.message === "invalid info"){
         setError(data.message);
 
-        }else if(data.status === 200 && data.token) {
+        }else{
+
+          console.log(data)
         localStorage.setItem('token', data.token);
         localStorage.setItem('userId', data.user._id);
         navigate('/services')
@@ -113,41 +115,6 @@ const apiUrl = import.meta.env.VITE_URL;
             </div>
           </div>
         </div>
-          {/* <div className="signup">
-      <div className="my-input">
-        <form onSubmit={handleSubmit}>
-          <h2 id="h2">Login</h2>
-
-          <input
-            name="email"
-            type="email"
-            placeholder="Enter your email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-
-          <input
-            name="password"
-            type="password"
-            placeholder="Enter your password"
-            value={formData.password}
-            onChange={handleChange}
-            required
-          />
-
-          {error && (
-            <p style={{ color: 'red', fontSize: '12px', marginTop: '5px' }}>
-              {error}
-            </p>
-          )}
-
-          <button type="submit" id="btt">
-            Submit
-          </button>
-        </form>
-      </div>
-    </div> */}
     </>
   
   );

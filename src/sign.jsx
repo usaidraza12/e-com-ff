@@ -53,7 +53,7 @@ const apiUrl = import.meta.env.VITE_URL;
         setError(data.message)
         navigate("/login")
       } else {
-        navigate("/login")
+        navigate("/sign")
       }
     } catch (error) {
       console.error("Error sending data:", error)
