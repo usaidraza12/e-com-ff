@@ -8,7 +8,7 @@ body{
   /* position:relative; */
 font-family:'Courier New', Courier, monospace; 
   height: fit-content;
-  overflow: auto; /* ✅ This will allow scrolling */
+  overflow-y: auto; /* ✅ This will allow scrolling */
   /* background: linear-gradient(180deg, rgb(52, 60, 63), rgb(202, 221, 221));  img1.jpg*/ 
   
   background-repeat:no-repeat;
